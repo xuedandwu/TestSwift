@@ -13,6 +13,7 @@
 		1ECE520A1E72731F00F9E17C /* TestSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE52081E72731F00F9E17C /* TestSwift.xcdatamodeld */; };
 		1ECE520C1E72731F00F9E17C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ECE520B1E72731F00F9E17C /* Assets.xcassets */; };
 		1ECE520F1E72731F00F9E17C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ECE520D1E72731F00F9E17C /* LaunchScreen.storyboard */; };
+		1ECE52171E72E81200F9E17C /* SWAutoLayoutKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE52161E72E81200F9E17C /* SWAutoLayoutKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1ECE520B1E72731F00F9E17C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ECE520E1E72731F00F9E17C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1ECE52101E72731F00F9E17C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1ECE52161E72E81200F9E17C /* SWAutoLayoutKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWAutoLayoutKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		1ECE52001E72731F00F9E17C /* TestSwift */ = {
 			isa = PBXGroup;
 			children = (
+				1ECE52161E72E81200F9E17C /* SWAutoLayoutKit.swift */,
 				1ECE52011E72731F00F9E17C /* AppDelegate.swift */,
 				1ECE52031E72731F00F9E17C /* ViewController.swift */,
 				1ECE52051E72731F00F9E17C /* Main.storyboard */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ECE52041E72731F00F9E17C /* ViewController.swift in Sources */,
+				1ECE52171E72E81200F9E17C /* SWAutoLayoutKit.swift in Sources */,
 				1ECE52021E72731F00F9E17C /* AppDelegate.swift in Sources */,
 				1ECE520A1E72731F00F9E17C /* TestSwift.xcdatamodeld in Sources */,
 			);
