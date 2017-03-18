@@ -8,6 +8,42 @@
 
 import UIKit
 
+class Shape {
+    var numberOfSides = 0
+    func simpleDescription() -> String {
+        return "A shape with \(numberOfSides) sides."
+    }
+}
+
+class NameShape {
+    var numberOfSides : Int = 0
+    var name : String
+    init(name:String) {
+        self.name = name
+    }
+    
+    func simpleDescription() -> String {
+        return "A shape with \(numberOfSides) sides."
+    }
+}
+
+class Square: NameShape {
+    var sideLength: Double
+    init(sideLength: Double, name: String) {
+        self.sideLength = sideLength
+        super.init(name: name)
+        numberOfSides = 4
+    }
+    
+    func area() -> Double {
+        return sideLength * sideLength
+    }
+    
+    override func simpleDescription() -> String {
+        return "A square with sides of length \(sideLength)."
+    }
+}
+
 
 class ViewController: UIViewController {
 
@@ -254,13 +290,153 @@ class ViewController: UIViewController {
             print(array2[i])
         }
         
+        for e in array2.enumerated(){
+            print(e)
+            print("元组 \(e.offset) \(e.element)")
+        }
         
+        for a in array2.reversed(){
+            print(a)
+        }
         
+        arr.append("ningcol")
         
+        let arr1 = ["Evi","Tank"]
+        arr += arr1
         
+        arr[0] = "Tom"
+        
+        arr.removeFirst()
+        print(arr)
+        arr.remove(at: 2)
+        print(arr)
+        
+        arr.removeAll(keepingCapacity: true)
+        print(arr.capacity)
+        
+        print ("初始容量 \(array3.capacity)")
+        for i in 0..<8{
+            array3.append(i)
+            print("\(array3),容量：\(array3.capacity)")
+        }
+        
+        self.createDict()
         
     }
     
+    func createDict(){
+        
+        let dict1 = ["name":"lisi","age":"18"]
+        
+        var dict2 : [String : Any] = ["name":"lisi","age":18]
+        
+        let array = [
+            ["name":"lisi","age":"18"],
+            ["name":"wangwu","age":"8"]
+        ]
+        
+        print(array)
+        
+        let array1 :[[String : Any]] = [
+            ["name":"lisi","age":"18"],
+            ["name":"wangwu","age":8]
+        ]
+        
+        print(array1)
+        
+        print(dict2["age"])
+        
+        dict2["sex"] = "man"
+        print(dict2)
+        
+        dict2["name"] = "zhangsan"
+        print(dict2)
+        
+        dict2.removeValue(forKey: "age")
+        print(dict2)
+        
+        for e in dict2{
+            //e为元组
+            print("字典遍历：\(e) e.key:\(e.key) value:\(e.value)")
+        }
+        
+        for (key,value) in dict2 {
+            print("key:\(key),value:\(value)")
+        }
+        
+        var dict3:[String:Any] = ["name":"zhangsan","age":18,"sex":"man"]
+        let dict4:[String:Any] = ["name":"ningcol","height":50]
+        
+        for e in dict4{
+            dict3[e.key] = dict4[e.key]
+        }
+        print("合并dict:" + String(format: "%@", dict3))
+        
+        var shape = Shape()
+        shape.numberOfSides = 7
+        var shapeDescription = shape.simpleDescription()
+        print(shapeDescription)
+        
+        
+        let test = Square(sideLength: 5, name: "my test square")
+        var testAreaDescriptiontest = test.area()
+        var testDescriptiontest = test.simpleDescription()
+        
+        print(testAreaDescriptiontest)
+        print(testDescriptiontest)
+        
+        
+        let v = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        let u = UIView()
+        
+        v.backgroundColor = UIColor.red
+        self.view.addSubview(v)
+        
+        let btn = UIButton(type: .contactAdd)
+        btn.center = v.center
+        v.addSubview(btn)
+        
+        let demo = {
+            print("hello")
+        }
+        demo()
+        
+//        func sum(x: Int,y: Int) -> Int{
+//            return x + y
+//        }
+//        
+//        print(sum(x: 20, y: 10))
+//        
+//        let fu = sum
+//        print(fu(10, 10))
+        
+//        func sum(num x: Int ,num y: Int) -> Int{
+//            return x + y
+//        }
+//        print(sum(num: 30, num: 40))
+        
+        // 外部参数使用 "_" 会忽略形参
+        func sum(_ x: Int ,_ y: Int) -> Int{
+            return x + y
+        }
+        print(sum(40, 50))
+        
+        
+        let demo1 = { (x: Int) -> () in
+            print(x)
+        }
+        
+        demo1(50)
+        
+        let demo2 = {
+            (x: Int) -> (Int) in
+            return 40 + x
+        }
+        print(demo2(40))
+
+        
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
